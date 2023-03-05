@@ -2,13 +2,15 @@
 
 import {NextPage} from "next";
 import {Layout} from "@/components/common/Layout";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 
 
 const PlacePage: NextPage = () => {
+ const pathname = usePathname()
 
   return (
     <Layout>
-      Place
+      {pathname}
     </Layout>
   );
 };

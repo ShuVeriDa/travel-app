@@ -3,11 +3,12 @@ import {FC} from 'react';
 import styles from './Footer.module.scss';
 import {usePathname, useRouter} from "next/navigation";
 
-
-interface IFooterProps {
+type TypeNavItem = {
+  icon: string
+  link: string
 }
 
-const navItems = [
+const navItems: TypeNavItem[] = [
   {
     icon: 'home',
     link: '/'
@@ -18,8 +19,8 @@ const navItems = [
   },
   {
     icon: 'place',
-    // link: '/place/kyoto'
-    link: '/place'
+    link: '/place/kyoto'
+    // link: '/place'
   },
   {
     icon: 'person_outline',
@@ -27,7 +28,7 @@ const navItems = [
   },
 ]
 
-export const Footer: FC<IFooterProps> = () => {
+export const Footer: FC = () => {
   const pathname = usePathname()
   const {push} = useRouter()
   console.log(pathname)

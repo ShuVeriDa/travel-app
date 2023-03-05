@@ -3,14 +3,15 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './assets/styles/page.module.css'
-import {Footer} from "@/app/components/common/footer/Footer";
+import {Footer} from "@/components/common/footer/Footer";
+import {Layout} from "@/components/common/Layout";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Footer />
-    </div>
+    <Layout>
+      Home page
+    </Layout>
   )
 }

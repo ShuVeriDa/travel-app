@@ -1,7 +1,7 @@
+'use client'
 import {FC} from 'react';
 import styles from './Footer.module.scss';
 import {usePathname, useRouter} from "next/navigation";
-
 
 
 interface IFooterProps {
@@ -18,6 +18,7 @@ const navItems = [
   },
   {
     icon: 'place',
+    // link: '/place/kyoto'
     link: '/place'
   },
   {
@@ -34,6 +35,7 @@ export const Footer: FC<IFooterProps> = () => {
     <footer className={styles.footer}>
       <nav>
         {navItems.map((item) => (
+
             <button key={item.icon}
                     onClick={() => push(item.link)}
                     className={pathname === item.link ? styles.active : ''}
